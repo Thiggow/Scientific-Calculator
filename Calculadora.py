@@ -128,7 +128,7 @@ def convertbtn():
 
 
         if myCombo.get() == 'Massa':
-            def value(event):
+            def value2(event):
                 global a
                 global a2
 
@@ -154,17 +154,17 @@ def convertbtn():
 
             myCombo_M = ttk.Combobox(frame_convert, value=options_M, width=16)
             myCombo_M.current(0)
-            myCombo_M.bind("<<ComboboxSelected>>", value)
+            myCombo_M.bind("<<ComboboxSelected>>", value2)
             myCombo_M.place(x=0, y=0)
 
             myCombo_M2 = ttk.Combobox(frame_convert2, value=options_M, width=16)
             myCombo_M2.current(0)
-            myCombo_M2.bind("<<ComboboxSelected>>", value)
+            myCombo_M2.bind("<<ComboboxSelected>>", value2)
             myCombo_M2.place(x=0, y=0)
 
         
         if myCombo.get() == 'Temperatura':
-            def value(event):
+            def value3(event):
                 global a
                 global a2
 
@@ -186,17 +186,17 @@ def convertbtn():
 
             myCombo_T = ttk.Combobox(frame_convert, value=options_T, width=16)
             myCombo_T.current(0)
-            myCombo_T.bind("<<ComboboxSelected>>", value)
+            myCombo_T.bind("<<ComboboxSelected>>", value3)
             myCombo_T.place(x=0, y=0)
             
             myCombo_T2 = ttk.Combobox(frame_convert2, value=options_T, width=16)
             myCombo_T2.current(0)
-            myCombo_T2.bind("<<ComboboxSelected>>", value)
+            myCombo_T2.bind("<<ComboboxSelected>>", value3)
             myCombo_T2.place(x=0, y=0)
 
 
         if myCombo.get() == 'Tempo':
-            def value(event):
+            def value4(event):
                 global a
                 global a2
 
@@ -218,17 +218,17 @@ def convertbtn():
 
             myCombo_Time = ttk.Combobox(frame_convert, value=options_Time, width=16)
             myCombo_Time.current(0)
-            myCombo_Time.bind("<<ComboboxSelected>>", value)
+            myCombo_Time.bind("<<ComboboxSelected>>", value4)
             myCombo_Time.place(x=0, y=0)
 
             myCombo_Time2 = ttk.Combobox(frame_convert2, value=options_Time, width=16)
             myCombo_Time2.current(0)
-            myCombo_Time2.bind("<<ComboboxSelected>>", value)
+            myCombo_Time2.bind("<<ComboboxSelected>>", value4)
             myCombo_Time2.place(x=0, y=0)
 
 
         if myCombo.get() == 'Volume':
-            def value(event):
+            def value5(event):
                 global a
                 global a2
 
@@ -250,12 +250,12 @@ def convertbtn():
 
             myCombo_V = ttk.Combobox(frame_convert, value=options_V, width=16)
             myCombo_V.current(0)
-            myCombo_V.bind("<<ComboboxSelected>>", value)
+            myCombo_V.bind("<<ComboboxSelected>>", value5)
             myCombo_V.place(x=0, y=0)
 
             myCombo_V2 = ttk.Combobox(frame_convert2, value=options_V, width=16)
             myCombo_V2.current(0)
-            myCombo_V2.bind("<<ComboboxSelected>>", value)
+            myCombo_V2.bind("<<ComboboxSelected>>", value5)
             myCombo_V2.place(x=0, y=0)
 
 
@@ -268,7 +268,7 @@ def convertbtn():
     myCombo.current(0)
     myCombo.place(x=0, y=0)
     
-    def value(event):
+    def valueMain(event):
         global a
         global a2
 
@@ -294,12 +294,12 @@ def convertbtn():
 
     myCombo_C = ttk.Combobox(frame_convert, value=options_C, width=16)
     myCombo_C.current(0)
-    myCombo_C.bind("<<ComboboxSelected>>", value)
+    myCombo_C.bind("<<ComboboxSelected>>", valueMain)
     myCombo_C.place(x=0, y=0)
 
     myCombo_C2 = ttk.Combobox(frame_convert2, value=options_C, width=16)
     myCombo_C2.current(0)
-    myCombo_C2.bind("<<ComboboxSelected>>", value)
+    myCombo_C2.bind("<<ComboboxSelected>>", valueMain)
     myCombo_C2.place(x=0, y=0)
 
 
@@ -312,177 +312,190 @@ def convertbtn():
 
 
         #COMPRIMENTO
-        if a == 'Quilômetro':
-            if a2 == 'Metro':
-                result2 = float(all_values2) * 1000
-                text_value3.set(result2)
-            if a2 == 'Centímetro':
-                result2 = float(all_values2) * 100000
-                text_value3.set(result2)
-            if a2 == 'Milímetro':
-                result2 = float(all_values2) * 1e+6
-                text_value3.set(result2)
+        try:
+            if a == 'Quilômetro':
+                if a2 == 'Metro':
+                    result2 = float(all_values2) * 1000
+                    text_value3.set(result2)
+                if a2 == 'Centímetro':
+                    result2 = float(all_values2) * 100000
+                    text_value3.set(result2)
+                if a2 == 'Milímetro':
+                    result2 = float(all_values2) * 1e+6
+                    text_value3.set(result2)
 
-        if a == 'Metro':
-            if a2 == 'Quilômetro':
-                result2 = float(all_values2) / 1000
-                text_value3.set(result2)
-            if a2 == 'Centímetro':
-                result2 = float(all_values2) * 100
-                text_value3.set(result2)
-            if a2 == 'Milímetro':
-                result2 = float(all_values2) * 1000
-                text_value3.set(result2)
+            if a == 'Metro':
+                if a2 == 'Quilômetro':
+                    result2 = float(all_values2) / 1000
+                    text_value3.set(result2)
+                if a2 == 'Centímetro':
+                    result2 = float(all_values2) * 100
+                    text_value3.set(result2)
+                if a2 == 'Milímetro':
+                    result2 = float(all_values2) * 1000
+                    text_value3.set(result2)
 
-        if a == 'Centímetro':
-            if a2 == 'Quilômetro':
-                result2 = float(all_values2) / 100000
-                text_value3.set(result2)
-            if a2 == 'Metro':
-                result2 = float(all_values2) / 100
-                text_value3.set(result2)
-            if a2 == 'Milímetro':
-                result2 = float(all_values2) * 10
-                text_value3.set(result2)
+            if a == 'Centímetro':
+                if a2 == 'Quilômetro':
+                    result2 = float(all_values2) / 100000
+                    text_value3.set(result2)
+                if a2 == 'Metro':
+                    result2 = float(all_values2) / 100
+                    text_value3.set(result2)
+                if a2 == 'Milímetro':
+                    result2 = float(all_values2) * 10
+                    text_value3.set(result2)
 
-        if a == 'Milímetro':
-            if a2 == 'Quilômetro':
-                result2 = float(all_values2) / 1e+6
-                text_value3.set(result2)
-            if a2 == 'Metro':
-                result2 = float(all_values2) / 1000
-                text_value3.set(result2)
-            if a2 == 'Centímetro':
-                result2 = float(all_values2) / 10
-                text_value3.set(result2)
+            if a == 'Milímetro':
+                if a2 == 'Quilômetro':
+                    result2 = float(all_values2) / 1e+6
+                    text_value3.set(result2)
+                if a2 == 'Metro':
+                    result2 = float(all_values2) / 1000
+                    text_value3.set(result2)
+                if a2 == 'Centímetro':
+                    result2 = float(all_values2) / 10
+                    text_value3.set(result2)
+        except:
+            text_value3.set('Error')
 
 
         #MASSA
-        if a == 'Tonelada':
-            if a2 == 'Quilograma':
-                result2 = float(all_values2) * 1000
-                text_value3.set(result2)
-            if a2 == 'Grama':
-                result2 = float(all_values2) * 1e+6
-                text_value3.set(result2)
-            if a2 == 'Miligrama':
-                result2 = float(all_values2) * 1e+9
-                text_value3.set(result2)
+        try:
+            if a == 'Tonelada':
+                if a2 == 'Quilograma':
+                    result2 = float(all_values2) * 1000
+                    text_value3.set(result2)
+                if a2 == 'Grama':
+                    result2 = float(all_values2) * 1e+6
+                    text_value3.set(result2)
+                if a2 == 'Miligrama':
+                    result2 = float(all_values2) * 1e+9
+                    text_value3.set(result2)
 
-        if a == 'Quilograma':
-            if a2 == 'Tonelada':
-                result2 = float(all_values2) / 1000
-                text_value3.set(result2)
-            if a2 == 'Grama':
-                result2 = float(all_values2) * 1000
-                text_value3.set(result2)
-            if a2 == 'Miligrama':
-                result2 = float(all_values2) * 1e+6
-                text_value3.set(result2)
+            if a == 'Quilograma':
+                if a2 == 'Tonelada':
+                    result2 = float(all_values2) / 1000
+                    text_value3.set(result2)
+                if a2 == 'Grama':
+                    result2 = float(all_values2) * 1000
+                    text_value3.set(result2)
+                if a2 == 'Miligrama':
+                    result2 = float(all_values2) * 1e+6
+                    text_value3.set(result2)
 
-        if a == 'Grama':
-            if a2 == 'Tonelada':
-                result2 = float(all_values2) / 1e+6
-                text_value3.set(result2)
-            if a2 == 'Quilograma':
-                result2 = float(all_values2) / 1000
-                text_value3.set(result2)
-            if a2 == 'Miligrama':
-                result2 = float(all_values2) * 1000
-                text_value3.set(result2)
+            if a == 'Grama':
+                if a2 == 'Tonelada':
+                    result2 = float(all_values2) / 1e+6
+                    text_value3.set(result2)
+                if a2 == 'Quilograma':
+                    result2 = float(all_values2) / 1000
+                    text_value3.set(result2)
+                if a2 == 'Miligrama':
+                    result2 = float(all_values2) * 1000
+                    text_value3.set(result2)
 
-        if a == 'Miligrama':
-            if a2 == 'Tonelada':
-                result2 = float(all_values2) / 1e+9
-                text_value3.set(result2)
-            if a2 == 'Quilograma':
-                result2 = float(all_values2) / 1e+6
-                text_value3.set(result2)
-            if a2 == 'Grama':
-                result2 = float(all_values2) / 1000
-                text_value3.set(result2)
+            if a == 'Miligrama':
+                if a2 == 'Tonelada':
+                    result2 = float(all_values2) / 1e+9
+                    text_value3.set(result2)
+                if a2 == 'Quilograma':
+                    result2 = float(all_values2) / 1e+6
+                    text_value3.set(result2)
+                if a2 == 'Grama':
+                    result2 = float(all_values2) / 1000
+                    text_value3.set(result2)
+        except:
+            text_value3.set('Error')
 
 
         #TEMPERATURA
-        if a == 'Grau Celsius':
-            if a2 == 'Grau Fahreinheit':
-                result2 = (float(all_values2) * 9/5) + 32
-                text_value3.set(result2)
-            if a2 == 'Kelvin':
-                result2 = float(all_values2) + 273.15
-                text_value3.set(result2)
+        try:
+            if a == 'Grau Celsius':
+                if a2 == 'Grau Fahreinheit':
+                    result2 = (float(all_values2) * 9/5) + 32
+                    text_value3.set(result2)
+                if a2 == 'Kelvin':
+                    result2 = float(all_values2) + 273.15
+                    text_value3.set(result2)
 
-        if a == 'Grau Fahreinheit':
-            if a2 == 'Grau Celsius':
-                result2 = (float(all_values2) - 32) * 5/9 
-                text_value3.set(round(result2, 4)) # 4 casas depois da vírgula
-            if a2 == 'Kelvin':
-                result2 = (float(all_values2) - 32) * 5/9 + 273.15
-                text_value3.set(round(result2, 3)) # 3 casas depois da vírgula
+            if a == 'Grau Fahreinheit':
+                if a2 == 'Grau Celsius':
+                    result2 = (float(all_values2) - 32) * 5/9 
+                    text_value3.set(round(result2, 4)) # 4 casas depois da vírgula
+                if a2 == 'Kelvin':
+                    result2 = (float(all_values2) - 32) * 5/9 + 273.15
+                    text_value3.set(round(result2, 3)) # 3 casas depois da vírgula
 
-        if a == 'Kelvin':
-            if a2 == 'Grau Celsius':
-                result2 = float(all_values2) - 273.15
-                text_value3.set(result2)
-            if a2 == 'Grau Fahreinheit':
-                result2 = (float(all_values2) - 273.15) * 9/5 + 32
-                text_value3.set(result2)
+            if a == 'Kelvin':
+                if a2 == 'Grau Celsius':
+                    result2 = float(all_values2) - 273.15
+                    text_value3.set(result2)
+                if a2 == 'Grau Fahreinheit':
+                    result2 = (float(all_values2) - 273.15) * 9/5 + 32
+                    text_value3.set(result2)
+        except:
+            text_value3.set('Error')
 
 
         #TEMPO
-        if a == 'Segundo':
-            if a2 == 'Minuto':
-                result2 = float(all_values2) / 60
-                text_value3.set(round(result2, 7)) # 7 casas depois da vírgula
-            if a2 == 'Hora':
-                result2 = float(all_values2) / 3600
-                text_value3.set(round(result2, 9)) # 9 casas depois da vírgula
+        try:
+            if a == 'Segundo':
+                if a2 == 'Minuto':
+                    result2 = float(all_values2) / 60
+                    text_value3.set(round(result2, 7)) # 7 casas depois da vírgula
+                if a2 == 'Hora':
+                    result2 = float(all_values2) / 3600
+                    text_value3.set(round(result2, 9)) # 9 casas depois da vírgula
 
-        if a == 'Minuto':
-            if a2 == 'Segundo':
-                result2 = float(all_values2) * 60
-                text_value3.set(result2)
-            if a2 == 'Hora':
-                result2 = float(all_values2) / 60
-                text_value3.set(round(result2, 7)) # 7 casas depois da vírgula
+            if a == 'Minuto':
+                if a2 == 'Segundo':
+                    result2 = float(all_values2) * 60
+                    text_value3.set(result2)
+                if a2 == 'Hora':
+                    result2 = float(all_values2) / 60
+                    text_value3.set(round(result2, 7)) # 7 casas depois da vírgula
 
-        if a == 'Hora':
-            if a2 == 'Segundo':
-                result2 = float(all_values2) * 3600
-                text_value3.set(result2)
-            if a2 == 'Minuto':
-                result2 = float(all_values2) * 60
-                text_value3.set(result2)
+            if a == 'Hora':
+                if a2 == 'Segundo':
+                    result2 = float(all_values2) * 3600
+                    text_value3.set(result2)
+                if a2 == 'Minuto':
+                    result2 = float(all_values2) * 60
+                    text_value3.set(result2)
+        except:
+            text_value3.set('Error')
 
         
         #VOLUME
-        if a == 'Metro cúbico':
-            if a2 == 'Litro':
-                result2 = float(all_values2) * 1000
-                text_value3.set(result2)
-            if a2 == 'Mililitro':
-                result2 = float(all_values2) * 1e+6
-                text_value3.set(result2)
+        try:
+            if a == 'Metro cúbico':
+                if a2 == 'Litro':
+                    result2 = float(all_values2) * 1000
+                    text_value3.set(result2)
+                if a2 == 'Mililitro':
+                    result2 = float(all_values2) * 1e+6
+                    text_value3.set(result2)
 
-        if a == 'Litro':
-            if a2 == 'Metro cúbico':
-                result2 = float(all_values2) / 1000
-                text_value3.set(result2)
-            if a2 == 'Mililitro':
-                result2 = float(all_values2) * 1000
-                text_value3.set(result2)
+            if a == 'Litro':
+                if a2 == 'Metro cúbico':
+                    result2 = float(all_values2) / 1000
+                    text_value3.set(result2)
+                if a2 == 'Mililitro':
+                    result2 = float(all_values2) * 1000
+                    text_value3.set(result2)
 
-        if a == 'Mililitro':
-            if a2 == 'Metro cúbico':
-                result2 = float(all_values2) / 1e+6
-                text_value3.set(result2)
-            if a2 == 'Litro':
-                result2 = float(all_values2) / 1000
-                text_value3.set(result2)
+            if a == 'Mililitro':
+                if a2 == 'Metro cúbico':
+                    result2 = float(all_values2) / 1e+6
+                    text_value3.set(result2)
+                if a2 == 'Litro':
+                    result2 = float(all_values2) / 1000
+                    text_value3.set(result2)
+        except:
+            text_value3.set('Error')
 
 
-        a = ''
-        a2 = ''
         all_values2 = ''
         
 
@@ -829,10 +842,13 @@ def calculate():
             all_values = all_values.replace('π', i)
 
 
-    result = eval(all_values)
-    answer = result
+    try:
+        result = eval(all_values)
+        answer = result
 
-    text_value.set(str(result))
+        text_value.set(str(result))
+    except:
+        text_value.set('Error')
 
     all_values = ''
 
@@ -850,8 +866,8 @@ def ans():
     global all_values
     global answer
 
-    text_value.set(answer)
-    all_values = str(answer)
+    show(answer)
+
 
 
 #CRIANDO E CONFIGURANDO JANELA
